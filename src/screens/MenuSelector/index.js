@@ -14,7 +14,7 @@ const MenuSelector = ({navigation}) => {
         key={item.id}
         style={styles.menuItemContainer}
         onPress={() => {
-          navigation.navigate(item.navigate);
+          navigation.navigate('Tabs', {screen: item.navigate});
         }}>
         <Text style={styles.menuItemText}>{item.screenName}</Text>
       </TouchableOpacity>
