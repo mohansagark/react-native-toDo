@@ -9,6 +9,7 @@ import Portfolio from '../Portfolio';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 import {SafeAreaView} from 'react-native';
+import Toast from 'react-native-toast-message';
 Ionicons.loadFont();
 
 const App = () => {
@@ -93,6 +94,7 @@ const App = () => {
           <RootStack.Screen name="Tabs" component={RootTabScreens} />
         </RootStack.Navigator>
       </NavigationContainer>
+      <Toast visibilityTime={2000} position={'bottom'} />
     </SafeAreaView>
   );
 };

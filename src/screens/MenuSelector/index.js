@@ -1,6 +1,7 @@
 import {View, Text, FlatList, TouchableOpacity} from 'react-native';
 import React from 'react';
 import styles from './styles';
+import LinearGradient from 'react-native-linear-gradient';
 
 const MenuSelector = ({navigation}) => {
   const menu = [
@@ -12,11 +13,16 @@ const MenuSelector = ({navigation}) => {
     return (
       <TouchableOpacity
         key={item.id}
-        style={styles.menuItemContainer}
         onPress={() => {
           navigation.navigate('Tabs', {screen: item.navigate});
         }}>
-        <Text style={styles.menuItemText}>{item.screenName}</Text>
+        <LinearGradient
+          start={{x: 0, y: 0}}
+          end={{x: 0, y: 1}}
+          colors={['green', '#234d17']}
+          style={styles.menuItemContainer}>
+          <Text style={styles.menuItemText}>{item.screenName}</Text>
+        </LinearGradient>
       </TouchableOpacity>
     );
   };

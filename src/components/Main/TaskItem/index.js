@@ -9,7 +9,7 @@ const TaskItem = props => {
 
   return (
     <TouchableOpacity
-      onPress={() => toggleStatus(task.id)}
+      onPress={() => toggleStatus(task)}
       style={styles.container}
       key={task.id}>
       <Text style={task.complete && styles.taskTitle}>{task.name}</Text>

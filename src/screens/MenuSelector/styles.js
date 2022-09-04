@@ -4,8 +4,6 @@ const styles = StyleSheet.create({
   container: {flex: 1, margin: 20},
   menuItemContainer: {
     height: 80,
-    backgroundColor: 'blue',
-    opacity: 0.5,
     marginBottom: 10,
     justifyContent: 'center',
     alignItems: 'center',

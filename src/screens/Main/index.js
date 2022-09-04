@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import TaskForm from '../../components/Main/TaskForm';
 import styles from './styles';
 import TaskList from '../../components/Main/TaskList';
+import {showInfo, showSuccess} from '../../helpers/utilityFunctions';
 
 const Main = ({navigation}) => {
   const [task, setTask] = useState('');
@@ -20,19 +21,21 @@ const Main = ({navigation}) => {
     if (task.trim()) {
       setList(temp);
       setTask('');
+      showSuccess('New task added');
     }
   };
 
-  const toggleStatus = id => {
+  const toggleStatus = t => {
     let temp = [...list];
 
     for (let i in temp) {
-      if (temp[i].id === id) {
+      if (temp[i].id === t.id) {
         temp[i].complete = !temp[i].complete;
         break;
       }
     }
     setList(temp);
+    showInfo(`Task marked as ${t.complete ? 'complete' : 'incomplete'}`);
   };
 
   const markAllRead = () => {
