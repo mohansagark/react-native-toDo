@@ -14,23 +14,44 @@ const Main = ({navigation}) => {
       name: task,
       id: '#' + temp.length,
       complete: false,
+      date: new Date(),
     };
     temp.push(newTask);
-    setList(temp);
-    setTask('');
+    if (task.trim()) {
+      setList(temp);
+      setTask('');
+    }
   };
 
   const toggleStatus = id => {
-    let reqItem = list.filter(item => item.id === id);
-    reqItem.complete = true;
+    let temp = [...list];
+
+    for (let i in temp) {
+      if (temp[i].id === id) {
+        temp[i].complete = !temp[i].complete;
+        break;
+      }
+    }
+    setList(temp);
   };
 
-  const markAllRead = () => null;
+  const markAllRead = () => {
+    let temp = [...list];
+
+    for (let i in temp) {
+      temp[i].complete = true;
+    }
+    setList(temp);
+  };
 
   return (
     <View style={styles.container}>
-      <TaskForm task={task} updateTask={setTask} onAdd={add} />
-      <Button title="Mark all as complete" onPress={markAllRead} />
+      <TaskForm
+        task={task}
+        updateTask={setTask}
+        onAdd={add}
+        markAllRead={markAllRead}
+      />
       <TaskList list={list} onDone={toggleStatus} navigation={navigation} />
     </View>
   );

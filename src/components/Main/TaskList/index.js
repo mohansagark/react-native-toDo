@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, FlatList} from 'react-native';
 import TaskItem from '../TaskItem';
+import moment from 'moment';
 import styles from './styles';
 
 const TaskList = props => {
@@ -11,7 +12,17 @@ const TaskList = props => {
   );
   return (
     <View style={styles.container}>
-      <FlatList data={list} renderItem={loadItem} />
+      <FlatList
+        data={list
+          .filter(task => {
+            return (
+              moment(task.date).date() >= moment().subtract(1, 'day').date() ||
+              !task.complete
+            );
+          })
+          .sort((a, b) => a.complete - b.complete)}
+        renderItem={loadItem}
+      />
     </View>
   );
 };

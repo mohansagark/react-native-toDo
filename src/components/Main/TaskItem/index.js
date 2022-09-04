@@ -1,21 +1,23 @@
 import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/dist/Fontisto';
 import styles from './styles';
+Icon.loadFont();
 
 const TaskItem = props => {
-  const {task, toggleStatus, navigation} = props;
-
-  const onNavigate = t => {
-    toggleStatus(task.id);
-    navigation.navigate('Details', {task: t});
-  };
+  const {task, toggleStatus} = props;
 
   return (
     <TouchableOpacity
-      onPress={() => onNavigate(task)}
+      onPress={() => toggleStatus(task.id)}
       style={styles.container}
       key={task.id}>
-      <Text>{task.name}</Text>
+      <Text style={task.complete && styles.taskTitle}>{task.name}</Text>
+      <Icon
+        name={task.complete ? 'checkbox-active' : 'checkbox-passive'}
+        color={'green'}
+        size={20}
+      />
     </TouchableOpacity>
   );
 };
