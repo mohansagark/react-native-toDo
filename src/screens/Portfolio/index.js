@@ -1,38 +1,37 @@
-import {View, Text, Image, TouchableOpacity} from 'react-native';
-import React, {useState} from 'react';
+import {ScrollView, View} from 'react-native';
+import React from 'react';
 import styles from './styles';
 
-import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+import {useGitHubInfo} from './api';
+import {
+  Avatar,
+  Education,
+  Experience,
+  Info,
+  Projects,
+  Skills,
+  SocialMedia,
+} from '../../components/Portfolio';
 
-const Portfolio = ({navigation}) => {
-  const [profilePhoto, setProfilePhoto] = useState('');
-
-  const openCamera = async () => {
-    const result = await launchCamera();
-  };
-
-  const openLibrary = async () => {
-    const result = await launchImageLibrary();
-  };
-
+const Portfolio = () => {
+  const data = useGitHubInfo();
   return (
-    <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image
-          style={styles.profileImage}
-          source={require('../../assets/ProfilePictureJPG.jpeg')}
-        />
+    <ScrollView style={styles.container}>
+      <View style={styles.firstRow}>
+        <View style={styles.flex1}>
+          <Info data={data} />
+        </View>
+        <View style={styles.flex1}>
+          <Avatar image={data?.avatar_url} />
+        </View>
       </View>
-      <View style={styles.pickerContainer}>
-        <TouchableOpacity style={styles.editTocuh} onPress={openCamera}>
-          <Text style={styles.editText}>Open Camera</Text>
-        </TouchableOpacity>
 
-        <TouchableOpacity style={styles.editTocuh} onPress={openLibrary}>
-          <Text style={styles.editText}>Open Library</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+      <Education />
+      <Experience />
+      <Projects />
+      <Skills />
+      <SocialMedia />
+    </ScrollView>
   );
 };
 
