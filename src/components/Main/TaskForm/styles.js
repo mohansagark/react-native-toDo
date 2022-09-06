@@ -18,18 +18,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  markAllButton: {
-    flexDirection: 'column-reverse',
-    borderWidth: StyleSheet.hairlineWidth,
-    backgroundColor: 'green',
-    alignItems: 'center',
-    paddingVertical: 10,
-    borderRadius: 5,
-    marginTop: 20,
+  buttonContainer: {
+    flexDirection: 'row',
   },
-  markAllText: {
-    color: 'white',
-    fontSize: 16,
+  dummyView: {
+    width: 20,
   },
 });
 

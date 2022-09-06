@@ -1,10 +1,12 @@
 import React from 'react';
-import {View, TextInput, Button, TouchableOpacity, Text} from 'react-native';
+import {View, TextInput} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Button from '../../Shared/Button';
 import styles from './styles';
 
 const TaskForm = props => {
-  const {task, updateTask, onAdd, markAllRead} = props;
+  const {task, updateTask, onAdd, markAllRead, enableDelete, showButtons} =
+    props;
   return (
     <>
       <View style={styles.container}>
@@ -25,9 +27,17 @@ const TaskForm = props => {
           />
         </View>
       </View>
-      <TouchableOpacity onPress={markAllRead} style={styles.markAllButton}>
-        <Text style={styles.markAllText}>Mark all as complete</Text>
-      </TouchableOpacity>
+      {showButtons && (
+        <View style={styles.buttonContainer}>
+          <Button
+            onPress={enableDelete}
+            value={'Remove task'}
+            isDestruct={true}
+          />
+          <View style={styles.dummyView} />
+          <Button onPress={markAllRead} value={'Mark all as complete'} />
+        </View>
+      )}
     </>
   );
 };

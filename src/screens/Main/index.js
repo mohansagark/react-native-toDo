@@ -1,13 +1,14 @@
-import {View, Button} from 'react-native';
+import {View} from 'react-native';
 import React, {useState} from 'react';
 import TaskForm from '../../components/Main/TaskForm';
 import styles from './styles';
 import TaskList from '../../components/Main/TaskList';
 import {showInfo, showSuccess} from '../../helpers/utilityFunctions';
 
-const Main = ({navigation}) => {
+const Main = () => {
   const [task, setTask] = useState('');
   const [list, setList] = useState([]);
+  const [showRemove, setShowRemove] = useState(false);
 
   const add = () => {
     let temp = [...list];
@@ -47,6 +48,13 @@ const Main = ({navigation}) => {
     setList(temp);
   };
 
+  const removeTask = id => {
+    let temp = [...list];
+    let result = temp.filter(item => item.id !== id);
+    setList(result);
+    showSuccess('Task is removed');
+  };
+
   return (
     <View style={styles.container}>
       <TaskForm
@@ -54,8 +62,15 @@ const Main = ({navigation}) => {
         updateTask={setTask}
         onAdd={add}
         markAllRead={markAllRead}
+        enableDelete={() => setShowRemove(!showRemove)}
+        showButtons={list?.length > 0}
       />
-      <TaskList list={list} onDone={toggleStatus} navigation={navigation} />
+      <TaskList
+        list={list}
+        onDone={toggleStatus}
+        removeTask={removeTask}
+        showRemove={showRemove}
+      />
     </View>
   );
 };

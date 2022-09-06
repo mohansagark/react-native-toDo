@@ -17,6 +17,10 @@ const styles = StyleSheet.create({
   taskTitle: {
     textDecorationLine: 'line-through',
   },
+  task: {flex: 6},
+  utilityContainer: {flex: 1, flexDirection: 'row'},
+  binMargin: {marginRight: 10},
+  dummyView: {width: 30},
 });
 
 export default styles;

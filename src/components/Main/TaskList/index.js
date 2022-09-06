@@ -5,10 +5,15 @@ import moment from 'moment';
 import styles from './styles';
 
 const TaskList = props => {
-  const {list, onDone, navigation} = props;
+  const {list, onDone, showRemove, removeTask} = props;
 
   const loadItem = ({item}) => (
-    <TaskItem task={item} navigation={navigation} toggleStatus={onDone} />
+    <TaskItem
+      task={item}
+      showRemove={showRemove}
+      removeTask={removeTask}
+      toggleStatus={onDone}
+    />
   );
   return (
     <View style={styles.container}>
