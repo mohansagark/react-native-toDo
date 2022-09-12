@@ -5,8 +5,9 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const MenuSelector = ({navigation}) => {
   const menu = [
-    {id: '#1', screenName: 'ToDo App', navigate: 'ToDo'},
-    {id: '#2', screenName: 'Portfolio App', navigate: 'Portfolio'},
+    {id: '#1', screenName: 'ToDo App', navigate: 'ToDo', root: false},
+    {id: '#2', screenName: 'Portfolio App', navigate: 'Portfolio', root: false},
+    {id: '#3', screenName: 'Counter App', navigate: 'Counter', root: true},
   ];
 
   const menuItem = ({item}) => {
@@ -14,7 +15,9 @@ const MenuSelector = ({navigation}) => {
       <TouchableOpacity
         key={item.id}
         onPress={() => {
-          navigation.navigate('Tabs', {screen: item.navigate});
+          item.root
+            ? navigation.navigate(item.navigate)
+            : navigation.navigate('Tabs', {screen: item.navigate});
         }}>
         <LinearGradient
           start={{x: 0, y: 0}}

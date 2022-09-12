@@ -10,6 +10,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 import {SafeAreaView} from 'react-native';
 import Toast from 'react-native-toast-message';
+import Counter from '../Counter';
+import {Provider} from 'react-redux';
+import {store} from '../../store/store';
 Ionicons.loadFont();
 
 const App = () => {
@@ -88,13 +91,16 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.fullFlex}>
-      <NavigationContainer>
-        <RootStack.Navigator screenOptions={{headerShown: false}}>
-          <RootStack.Screen name="Menu Selector" component={MenuSelector} />
-          <RootStack.Screen name="Tabs" component={RootTabScreens} />
-        </RootStack.Navigator>
-      </NavigationContainer>
-      <Toast visibilityTime={2000} position={'bottom'} />
+      <Provider store={store}>
+        <NavigationContainer>
+          <RootStack.Navigator screenOptions={{headerShown: false}}>
+            <RootStack.Screen name="Menu Selector" component={MenuSelector} />
+            <RootStack.Screen name="Tabs" component={RootTabScreens} />
+            <RootStack.Screen name="Counter" component={Counter} />
+          </RootStack.Navigator>
+        </NavigationContainer>
+        <Toast visibilityTime={2000} position={'bottom'} />
+      </Provider>
     </SafeAreaView>
   );
 };

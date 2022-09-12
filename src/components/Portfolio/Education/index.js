@@ -1,11 +1,12 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
 import styles from './styles';
+import Header from '../../Shared/Header';
 
 const Education = () => {
   return (
     <View style={styles.container}>
-      <Text>Education comes here</Text>
+      <Header h2 title={'Education'} />
     </View>
   );
 };

@@ -1,12 +1,12 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  imageContainer: {
-    height: 100,
-    justifyContent: 'center',
+  container: {flex: 1, alignItems: 'center'},
+  appContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
+    flex: 1,
   },
-  profileImage: {height: 100, width: 100, borderRadius: 50},
 });
 
 export default styles;

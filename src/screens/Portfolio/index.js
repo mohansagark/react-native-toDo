@@ -18,7 +18,7 @@ const Portfolio = () => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.firstRow}>
-        <View style={styles.flex1}>
+        <View style={styles.flex2}>
           <Info data={data} />
         </View>
         <View style={styles.flex1}>
