@@ -7,7 +7,6 @@ import {connect} from 'react-redux';
 import {DECREMENT_COUNTER, INCREMENT_COUNTER} from '../../store/actions/types';
 
 const Counter = ({onDecrement, onIncrement, count}) => {
-  console.log(count);
   return (
     <View style={styles.container}>
       <Header title={'Counter'} h2 />
