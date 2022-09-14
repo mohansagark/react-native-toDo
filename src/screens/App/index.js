@@ -13,6 +13,7 @@ import Toast from 'react-native-toast-message';
 import Counter from '../Counter';
 import {Provider} from 'react-redux';
 import {store} from '../../store/store';
+import {ShoppingCart, ShoppingList} from '../ShoppingCart';
 Ionicons.loadFont();
 
 const App = () => {
@@ -97,6 +98,8 @@ const App = () => {
             <RootStack.Screen name="Menu Selector" component={MenuSelector} />
             <RootStack.Screen name="Tabs" component={RootTabScreens} />
             <RootStack.Screen name="Counter" component={Counter} />
+            <RootStack.Screen name="ShoppingCart" component={ShoppingCart} />
+            <RootStack.Screen name="ShoppingList" component={ShoppingList} />
           </RootStack.Navigator>
         </NavigationContainer>
         <Toast visibilityTime={2000} position={'bottom'} />

@@ -8,6 +8,12 @@ const MenuSelector = ({navigation}) => {
     {id: '#1', screenName: 'ToDo App', navigate: 'ToDo', root: false},
     {id: '#2', screenName: 'Portfolio App', navigate: 'Portfolio', root: false},
     {id: '#3', screenName: 'Counter App', navigate: 'Counter', root: true},
+    {
+      id: '#4',
+      screenName: 'Shopping App',
+      navigate: 'ShoppingList',
+      root: true,
+    },
   ];
 
   const menuItem = ({item}) => {
@@ -21,9 +27,9 @@ const MenuSelector = ({navigation}) => {
         }}>
         <LinearGradient
           start={{x: 0, y: 0}}
-          end={{x: 0, y: 1}}
-          colors={['green', '#234d17']}
-          style={styles.menuItemContainer}>
+          end={{x: 1, y: 0}}
+          colors={['#12c2e9', '#c471ed', '#f64f59']}
+          style={styles.gradient}>
           <Text style={styles.menuItemText}>{item.screenName}</Text>
         </LinearGradient>
       </TouchableOpacity>

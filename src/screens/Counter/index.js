@@ -5,10 +5,12 @@ import Header from '../../components/Shared/Header';
 import Button from '../../components/Shared/Button';
 import {connect} from 'react-redux';
 import {DECREMENT_COUNTER, INCREMENT_COUNTER} from '../../store/actions/types';
+import {BackNavigator} from '../../components/Shared';
 
 const Counter = ({onDecrement, onIncrement, count}) => {
   return (
     <View style={styles.container}>
+      <BackNavigator />
       <Header title={'Counter'} h2 />
       <View style={styles.appContainer}>
         <Button value={'-'} onPress={onDecrement} />
