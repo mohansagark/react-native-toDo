@@ -1,26 +1,28 @@
-import {FlatList, View} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import Header from '../../../components/Shared/Header';
 import {connect} from 'react-redux';
 import {BackNavigator} from '../../../components/Shared';
+import {SummaryCard} from '../../../components/ShoppingCart';
 
-const Cart = ({}) => {
+const Cart = ({totalQuantity, totalCost}) => {
   return (
     <View style={styles.container}>
       <BackNavigator />
       <Header title={'Cart'} h2 />
-      <FlatList style={styles.fullFlex} />
+      <SummaryCard />
       <View style={styles.totalBar}>
-        <Header title={'Total'} h2 />
-        <Header title={'Total'} h2 />
+        <Header title={`Items: ${totalQuantity}`} h3 />
+        <Header title={`Total cost: Rs. ${totalCost}`} h3 />
       </View>
     </View>
   );
 };
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  totalQuantity: state.shoppingList.totalQuantity,
+  totalCost: state.shoppingList.totalAmount,
+});
 
-const mapDispatchToProps = dispatch => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default connect(mapStateToProps, null)(Cart);

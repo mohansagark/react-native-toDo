@@ -8,8 +8,8 @@ const TaskForm = props => {
   const {task, updateTask, onAdd, markAllRead, enableDelete, showButtons} =
     props;
   return (
-    <>
-      <View style={styles.container}>
+    <View style={styles.container}>
+      <View style={styles.inlineContainer}>
         <TextInput
           placeholder="Type here..."
           style={styles.input}
@@ -38,7 +38,7 @@ const TaskForm = props => {
           <Button onPress={markAllRead} value={'Mark all as complete'} />
         </View>
       )}
-    </>
+    </View>
   );
 };
 

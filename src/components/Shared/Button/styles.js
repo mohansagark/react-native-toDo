@@ -9,12 +9,13 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 5,
     marginTop: 20,
-    minWidth: 200,
+    minWidth: 150,
   },
   buttonText: {
     color: 'white',
     fontSize: 16,
     fontWeight: '700',
+    paddingHorizontal: 10,
   },
   blueText: {color: '#1976D2'},
   destructButton: {

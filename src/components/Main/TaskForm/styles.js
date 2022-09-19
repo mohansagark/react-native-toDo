@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {flexDirection: 'row', height: 40},
+  inlineContainer: {flexDirection: 'row', height: 40},
   input: {
     flex: 8,
     borderColor: 'grey',
@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   dummyView: {
     width: 20,
