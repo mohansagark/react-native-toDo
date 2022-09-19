@@ -1,0 +1,58 @@
+[
+  {
+    "id": "#1",
+    "name": "Apples",
+    "unit_price": 20,
+    "measure": "kg",
+    "thumbnail": "https://media.istockphoto.com/photos/red-apple-picture-id184276818?k=20&m=184276818&s=612x612&w=0&h=QxOcueqAUVTdiJ7DVoCu-BkNCIuwliPEgtAQhgvBA_g="
+  },
+  {
+    "id": "#2",
+    "name": "Bananas",
+    "unit_price": 5,
+    "measure": "piece",
+    "thumbnail": "https://img.freepik.com/premium-photo/banana-bunch-isolated_88281-1027.jpg?w=2000"
+  },
+  {
+    "id": "#3",
+    "name": "Oranges",
+    "unit_price": 60,
+    "measure": "kg",
+    "thumbnail": "https://cdn.pixabay.com/photo/2016/02/23/17/42/orange-1218158_1280.png"
+  },
+  {
+    "id": "#4",
+    "name": "Pineapple",
+    "unit_price": 50,
+    "measure": "piece",
+    "thumbnail": "https://greenvillefarm.in/wp-content/uploads/2021/01/greenville-pineapple.jpg"
+  },
+  {
+    "id": "#5",
+    "name": "Green peas",
+    "unit_price": 100,
+    "measure": "box",
+    "thumbnail": "https://www.bigbasket.com/media/uploads/p/l/40005817_3-fresho-green-peas-peeled.jpg"
+  },
+  {
+    "id": "#6",
+    "name": "Potatoes",
+    "unit_price": 50,
+    "measure": "kg",
+    "thumbnail": "https://media.istockphoto.com/photos/three-potatoes-picture-id157430678?k=20&m=157430678&s=612x612&w=0&h=dfYLuPYwA50ojI90hZ4jCgKZd5TGnqf24UCVBszoZIA="
+  },
+  {
+    "id": "#7",
+    "name": "Cabbage",
+    "unit_price": 20,
+    "measure": "piece",
+    "thumbnail": "https://www.gardeningknowhow.com/wp-content/uploads/2020/03/primo-vantage-400x350.jpg"
+  },
+  {
+    "id": "#9",
+    "name": "Pumpkin",
+    "unit_price": 100,
+    "measure": "piece",
+    "thumbnail": "https://images.immediate.co.uk/production/volatile/sites/30/2020/02/pumpkin-3f3d894.jpg"
+  }
+]

@@ -4,42 +4,10 @@ import {
   REMOVE_FROM_SELECTED_LIST,
   SET_SHOPPING_LIST,
 } from '../actions/types';
+import shoppingListData from '../../constants/dummydata/shoppingCartList.json';
 
 const initialState = {
-  availableItems: [
-    {
-      id: '#1',
-      name: 'Apples',
-      unit_price: 20,
-      measure: 'kg',
-      thumbnail:
-        'https://media.istockphoto.com/photos/red-apple-picture-id184276818?k=20&m=184276818&s=612x612&w=0&h=QxOcueqAUVTdiJ7DVoCu-BkNCIuwliPEgtAQhgvBA_g=',
-    },
-    {
-      id: '#2',
-      name: 'Bananas',
-      unit_price: 5,
-      measure: 'piece',
-      thumbnail:
-        'https://img.freepik.com/premium-photo/banana-bunch-isolated_88281-1027.jpg?w=2000',
-    },
-    {
-      id: '#3',
-      name: 'Oranges',
-      unit_price: 60,
-      measure: 'kg',
-      thumbnail:
-        'https://cdn.pixabay.com/photo/2016/02/23/17/42/orange-1218158_1280.png',
-    },
-    {
-      id: '#4',
-      name: 'Pineapple',
-      unit_price: 50,
-      measure: 'piece',
-      thumbnail:
-        'https://greenvillefarm.in/wp-content/uploads/2021/01/greenville-pineapple.jpg',
-    },
-  ],
+  availableItems: shoppingListData,
   selectedItems: [],
   totalQuantity: 0,
   totalAmount: 0,

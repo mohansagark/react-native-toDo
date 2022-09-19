@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
   },
   fullFlex: {flex: 1},
   totalBar: {
+    paddingTop: 30,
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
