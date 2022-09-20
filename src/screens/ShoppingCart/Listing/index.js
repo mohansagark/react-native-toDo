@@ -1,13 +1,23 @@
 import {FlatList, View} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './styles';
 import {connect} from 'react-redux';
 import Header from '../../../components/Shared/Header';
 import {BackNavigator, Button} from '../../../components/Shared';
 import {CartIcon, ListItem} from '../../../components/ShoppingCart';
 import {showError} from '../../../helpers/utilityFunctions';
+import {getProducts} from '../../../store/actions/shoppingList.actions';
 
-const Listing = ({navigation, availableItems, selectedItems}) => {
+const Listing = ({
+  navigation,
+  availableItems,
+  selectedItems,
+  getProductsList,
+}) => {
+  useEffect(() => {
+    getProductsList();
+  }, [getProductsList]);
+
   const navigateToCart = () => {
     selectedItems.length > 0
       ? navigation.navigate('ShoppingCart')
@@ -33,4 +43,10 @@ const mapStateToProps = state => ({
   selectedItems: state.shoppingList.selectedItems,
 });
 
-export default connect(mapStateToProps, null)(Listing);
+const mapDispatchToProps = dispatch => ({
+  getProductsList: () => {
+    dispatch(getProducts());
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Listing);

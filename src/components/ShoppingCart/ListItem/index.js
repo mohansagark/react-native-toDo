@@ -1,4 +1,4 @@
-import {Text, Image, TouchableOpacity, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import {connect} from 'react-redux';
@@ -6,13 +6,17 @@ import {
   ADD_TO_SELECTED_LIST,
   REMOVE_FROM_SELECTED_LIST,
 } from '../../../store/actions/types';
+import FastImage from 'react-native-fast-image';
 
 const ListItem = ({item, addToList, removeFromList, selectedList}) => {
   let quantity = selectedList?.find(itm => itm.id === item.id)?.quantity ?? 0;
 
   return (
     <View style={styles.container}>
-      <Image source={{uri: item.thumbnail}} style={styles.thumbnail} />
+      <FastImage
+        source={{uri: item.thumbnail, priority: FastImage.priority.normal}}
+        style={styles.thumbnail}
+      />
       <View style={styles.quantityContainer}>
         <Text style={styles.name}>{item.name}</Text>
         <View style={styles.counter}>

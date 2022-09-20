@@ -19,7 +19,7 @@ const shoppingList = (state = initialState, action) => {
     case SET_SHOPPING_LIST:
       return {
         ...state,
-        availableItems: action?.payload,
+        availableItems: [...initialState.availableItems, ...action.payload],
       };
     case ADD_TO_SELECTED_LIST:
       let addedList = [...state.selectedItems];
