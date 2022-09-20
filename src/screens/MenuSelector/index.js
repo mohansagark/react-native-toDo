@@ -14,6 +14,12 @@ const MenuSelector = ({navigation}) => {
       navigate: 'ShoppingList',
       root: true,
     },
+    {
+      id: '#5',
+      screenName: 'Weather App',
+      navigate: 'Weather',
+      root: true,
+    },
   ];
 
   const menuItem = ({item}) => {

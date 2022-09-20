@@ -14,6 +14,7 @@ import Counter from '../Counter';
 import {Provider} from 'react-redux';
 import {store} from '../../store/store';
 import {ShoppingCart, ShoppingList} from '../ShoppingCart';
+import {WeatherOverView} from '../Weather';
 Ionicons.loadFont();
 
 const App = () => {
@@ -100,6 +101,7 @@ const App = () => {
             <RootStack.Screen name="Counter" component={Counter} />
             <RootStack.Screen name="ShoppingCart" component={ShoppingCart} />
             <RootStack.Screen name="ShoppingList" component={ShoppingList} />
+            <RootStack.Screen name="Weather" component={WeatherOverView} />
           </RootStack.Navigator>
         </NavigationContainer>
         <Toast visibilityTime={2000} position={'bottom'} />
