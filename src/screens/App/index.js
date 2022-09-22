@@ -22,7 +22,6 @@ const App = () => {
   const PortfolioStack = createNativeStackNavigator();
   const Tab = createBottomTabNavigator();
   const RootStack = createNativeStackNavigator();
-
   const ToDoStackScreen = () => {
     return (
       <ToDoStack.Navigator screenOptions={{headerShow: false}}>

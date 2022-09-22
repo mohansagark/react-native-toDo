@@ -10,14 +10,17 @@ import {
   getLiveWeather,
   weatherAlerts,
 } from '../../../store/actions/weather.actions';
+import {SET_THEME_COLOR} from '../../../store/actions/types';
+import {store} from '../../../store/store';
 
-const Overview = ({weatherData, loadWeatherData}) => {
+const Overview = ({weatherData, loadWeatherData, setThemeColor}) => {
   useEffect(() => {
     Geolocation.getCurrentPosition(info => {
       loadWeatherData(info?.coords?.latitude, info?.coords?.longitude);
     });
-  }, [loadWeatherData]);
-  console.log(weatherData);
+    setThemeColor();
+  }, [loadWeatherData, setThemeColor]);
+  console.log(store.getState().general.themecolor);
   return (
     <View style={styles.container}>
       <BackNavigator />
@@ -38,6 +41,9 @@ const mapDispatchToProps = dispatch => ({
     dispatch(get5DayForecast(lat, long));
     dispatch(getLiveWeather(lat, long));
     dispatch(weatherAlerts(lat, long));
+  },
+  setThemeColor: () => {
+    dispatch({type: SET_THEME_COLOR, payload: '#ABD9FF'});
   },
 });
 

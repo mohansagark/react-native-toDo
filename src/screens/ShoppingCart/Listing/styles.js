@@ -1,11 +1,12 @@
 import {StyleSheet} from 'react-native';
+import {store} from '../../../store/store';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     padding: 15,
-    backgroundColor: '#fff',
+    backgroundColor: store.getState().general.themecolor,
   },
   fullFlex: {flex: 1},
 });

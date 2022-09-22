@@ -16,7 +16,7 @@ export const get5DayForecast = (lat, long) => async dispatch => {
       url: 'https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly',
       params: {lat: lat, lon: long},
       headers: {
-        'X-RapidAPI-Key': '4c3a95669dmsh029ae2d179f7eafp10e713jsn4565ae8acb67',
+        'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
         'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com',
       },
     };
@@ -42,7 +42,7 @@ export const getCurrentWeather = (lat, long) => async dispatch => {
       url: 'https://weatherbit-v1-mashape.p.rapidapi.com/current',
       params: {lon: long, lat: lat, lang: 'en'},
       headers: {
-        'X-RapidAPI-Key': '4c3a95669dmsh029ae2d179f7eafp10e713jsn4565ae8acb67',
+        'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
         'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com',
       },
     };
@@ -69,7 +69,7 @@ export const getLiveWeather = (lat, long) => async dispatch => {
       url: 'https://weatherbit-v1-mashape.p.rapidapi.com/forecast/minutely',
       params: {lat: lat, lon: long},
       headers: {
-        'X-RapidAPI-Key': '4c3a95669dmsh029ae2d179f7eafp10e713jsn4565ae8acb67',
+        'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
         'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com',
       },
     };
@@ -96,7 +96,7 @@ export const sixteenDayForecast = (lat, long) => async dispatch => {
       url: 'https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily',
       params: {lat: lat, lon: long},
       headers: {
-        'X-RapidAPI-Key': '4c3a95669dmsh029ae2d179f7eafp10e713jsn4565ae8acb67',
+        'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
         'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com',
       },
     };
@@ -127,7 +127,7 @@ export const hourlyForecast = (lat, long, hours) => async dispatch => {
         hours: hours && hours <= 120 ? hours : '48',
       },
       headers: {
-        'X-RapidAPI-Key': '4c3a95669dmsh029ae2d179f7eafp10e713jsn4565ae8acb67',
+        'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
         'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com',
       },
     };
@@ -154,7 +154,7 @@ export const weatherAlerts = (lat, long) => async dispatch => {
       url: 'https://weatherbit-v1-mashape.p.rapidapi.com/alerts',
       params: {lat: lat, lon: long},
       headers: {
-        'X-RapidAPI-Key': '4c3a95669dmsh029ae2d179f7eafp10e713jsn4565ae8acb67',
+        'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
         'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com',
       },
     };
