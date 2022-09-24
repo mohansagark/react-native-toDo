@@ -1,12 +1,11 @@
 import {StyleSheet} from 'react-native';
-import {store} from '../../store/store';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: store.getState().general.themecolor,
   },
+  spacing: {paddingHorizontal: 20},
   gradient: {
     height: 80,
     marginBottom: 10,

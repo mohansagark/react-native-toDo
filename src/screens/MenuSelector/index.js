@@ -1,4 +1,4 @@
-import {View, Text, FlatList, TouchableOpacity} from 'react-native';
+import {Text, FlatList, TouchableOpacity, SafeAreaView} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import LinearGradient from 'react-native-linear-gradient';
@@ -43,9 +43,13 @@ const MenuSelector = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
-      <FlatList data={menu} renderItem={menuItem} />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={menu}
+        renderItem={menuItem}
+        contentContainerStyle={styles.spacing}
+      />
+    </SafeAreaView>
   );
 };
 

@@ -23,7 +23,7 @@ const Overview = ({weatherData, loadWeatherData, setThemeColor}) => {
   console.log(store.getState().general.themecolor);
   return (
     <View style={styles.container}>
-      <BackNavigator />
+      <BackNavigator top={45} />
       <Header title={'Weather App'} h2 />
       <ScrollView>
         <Text>{JSON.stringify(weatherData)}</Text>

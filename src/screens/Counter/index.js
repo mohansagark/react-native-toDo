@@ -1,4 +1,4 @@
-import {View} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import Header from '../../components/Shared/Header';
@@ -9,15 +9,15 @@ import {BackNavigator} from '../../components/Shared';
 
 const Counter = ({onDecrement, onIncrement, count}) => {
   return (
-    <View style={styles.container}>
-      <BackNavigator />
+    <SafeAreaView style={styles.container}>
+      <BackNavigator top={45} />
       <Header title={'Counter'} h2 />
       <View style={styles.appContainer}>
         <Button value={'-'} onPress={onDecrement} />
         <Header title={count} h2 />
         <Button value={'+'} onPress={onIncrement} />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

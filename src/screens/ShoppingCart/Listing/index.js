@@ -1,4 +1,4 @@
-import {FlatList, View} from 'react-native';
+import {FlatList, SafeAreaView, View} from 'react-native';
 import React, {useEffect} from 'react';
 import styles from './styles';
 import {connect} from 'react-redux';
@@ -24,7 +24,7 @@ const Listing = ({
       : showError('Cart is empty. Please add some items.');
   };
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <BackNavigator />
       <Header title={'Shopping List'} h2 />
       <CartIcon />
@@ -34,7 +34,7 @@ const Listing = ({
         renderItem={({item}) => <ListItem item={item} />}
       />
       <Button value={'Cart'} onPress={navigateToCart} />
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -1,4 +1,4 @@
-import {View} from 'react-native';
+import {View, SafeAreaView} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import Header from '../../../components/Shared/Header';
@@ -8,7 +8,7 @@ import {SummaryCard} from '../../../components/ShoppingCart';
 
 const Cart = ({totalQuantity, totalCost}) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <BackNavigator />
       <Header title={'Cart'} h2 />
       <SummaryCard />
@@ -16,7 +16,7 @@ const Cart = ({totalQuantity, totalCost}) => {
         <Header title={`Items: ${totalQuantity}`} h3 />
         <Header title={`Total cost: Rs. ${totalCost}`} h3 />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

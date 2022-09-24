@@ -8,7 +8,7 @@ import MenuSelector from '../MenuSelector';
 import Portfolio from '../Portfolio';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
-import {SafeAreaView} from 'react-native';
+import {View} from 'react-native';
 import Toast from 'react-native-toast-message';
 import Counter from '../Counter';
 import {Provider} from 'react-redux';
@@ -91,7 +91,7 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={styles.fullFlex}>
+    <View style={styles.fullFlex}>
       <Provider store={store}>
         <NavigationContainer>
           <RootStack.Navigator screenOptions={{headerShown: false}}>
@@ -105,7 +105,7 @@ const App = () => {
         </NavigationContainer>
         <Toast visibilityTime={2000} position={'bottom'} />
       </Provider>
-    </SafeAreaView>
+    </View>
   );
 };
 
