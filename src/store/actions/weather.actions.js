@@ -16,11 +16,10 @@ export const get5DayForecast = (lat, long) => async dispatch => {
       url: 'https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly',
       params: {lat: lat, lon: long},
       headers: {
-        'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
+        'X-RapidAPI-Key': '4c3a95669dmsh029ae2d179f7eafp10e713jsn4565ae8acb67',
         'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com',
       },
     };
-
     const {data} = await axios.request(options);
     dispatch({
       type: SET_5DAY_FORECAST,
@@ -31,6 +30,7 @@ export const get5DayForecast = (lat, long) => async dispatch => {
       payload: {latitude: data?.lat, longitude: data?.long},
     });
   } catch (e) {
+    console.log(e);
     return e;
   }
 };
@@ -58,6 +58,7 @@ export const getCurrentWeather = (lat, long) => async dispatch => {
       payload: {latitude: lat, longitude: long},
     });
   } catch (err) {
+    console.log(err);
     return err;
   }
 };
@@ -75,7 +76,7 @@ export const getLiveWeather = (lat, long) => async dispatch => {
     };
 
     const {data} = await axios.request(options);
-
+    console.log(data, 'live weather data');
     dispatch({
       type: SET_LIVE_WEATHER_INFO,
       payload: data?.data[0] ?? {},
@@ -85,6 +86,7 @@ export const getLiveWeather = (lat, long) => async dispatch => {
       payload: {latitude: lat, longitude: long},
     });
   } catch (err) {
+    console.log(err);
     return err;
   }
 };
@@ -112,6 +114,7 @@ export const sixteenDayForecast = (lat, long) => async dispatch => {
       payload: {latitude: lat, longitude: long},
     });
   } catch (err) {
+    console.log(err);
     return err;
   }
 };
@@ -143,6 +146,7 @@ export const hourlyForecast = (lat, long, hours) => async dispatch => {
       payload: {latitude: lat, longitude: long},
     });
   } catch (err) {
+    console.log(err);
     return err;
   }
 };
@@ -170,6 +174,7 @@ export const weatherAlerts = (lat, long) => async dispatch => {
       payload: {latitude: lat, longitude: long},
     });
   } catch (err) {
+    console.log(err);
     return err;
   }
 };

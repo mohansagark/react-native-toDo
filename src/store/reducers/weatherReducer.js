@@ -29,7 +29,7 @@ const weather = (state = initialState, action) => {
     case SET_COORDINATES:
       return {
         ...state,
-        coordinates: action?.payload ?? {},
+        coordinates: {...state.coordinates, ...action?.payload},
       };
     case SET_CURRENT_WEATHER_INFO:
       return {
